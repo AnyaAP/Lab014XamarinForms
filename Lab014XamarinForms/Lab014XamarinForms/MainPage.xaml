@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab014XamarinForms.MainPage">
+
+    <StackLayout>
+        <Label Text="Список поездов" HorizontalOptions="Center" FontSize="Large" />
+        <ListView x:Name="trainsList" ItemsSource="{Binding}" ItemTapped="TrainsList_ItemTapped" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Number}" FontSize="18" />
+                                <Label Text="{Binding Railcars}" />
+                                <Label Text="{Binding TrainType}" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        <Button Text="Добавить поезд" Clicked="CreateTrain"/>
+            <Label Text="Список пассажиров" HorizontalOptions="Center" FontSize="Large" />
+        <ListView x:Name="passengersList" ItemsSource="{Binding}" ItemTapped="PassengersList_ItemTapped" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding PassName}" FontSize="18" />
+                                <Label Text="{Binding Passport}" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        <Button Text="Добавить пассажира" Clicked="CreatePassenger"/>
+            <Label Text="Список билетов" HorizontalOptions="Center" FontSize="Large" />
+        <ListView x:Name="ticketsList" ItemsSource="{Binding}" ItemTapped="TicketsList_ItemTapped" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding PassId}" FontSize="18" />
+                                    <Label Text="{Binding TrainId}" />
+                                    <Label Text="{Binding Railcar}" />
+                                    <Label Text="{Binding Seat}" />
+                                    <Label Text="{Binding StartPlace}" />
+                                    <Label Text="{Binding FinalPlace}" />
+                                    <Label Text="{Binding StartDate}" />
+                                    <Label Text="{Binding FinalDate}" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Добавить билет" Clicked="CreateTicket"/>
+    </StackLayout>
+
+</ContentPage>

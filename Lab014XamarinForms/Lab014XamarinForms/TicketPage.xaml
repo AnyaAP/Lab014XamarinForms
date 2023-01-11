@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab014XamarinForms.TicketPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="PassId" />
+            <Entry Text="{Binding PassId}" />
+            <Label Text="TrainId" />
+            <Entry Text="{Binding TrainId}" />
+            <Label Text="Railcar" />
+            <Entry Text="{Binding Railcar}" />
+            <Label Text="Seat" />
+            <Entry Text="{Binding Seat}" />
+            <Label Text="StartPlace" />
+            <Entry Text="{Binding StartPlace}" />
+            <Label Text="FinalPlace" />
+            <Entry Text="{Binding FinalPlace}" />
+            <Label Text="StartDate" />
+            <Entry Text="{Binding StartDate}" />
+            <Label Text="FinalDate" />
+            <Entry Text="{Binding FinalDate}" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Сохранить" Clicked="SaveTicket" />
+                <Button Text="Удалить" Clicked="DeleteTicket"  />
+                <Button Text="Отмена" Clicked="Cancel" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
